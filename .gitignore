@@ -1,0 +1,10 @@
+/nbproject/private/
+*.lock
+
+\.env
+
+nbproject/
+
+vendor/
+
+node_modules/
