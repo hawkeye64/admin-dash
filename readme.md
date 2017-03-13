@@ -3,10 +3,10 @@
 ## Changes
 
 * Added support for Social avatars.
-** This is controlled by using USE_GRAVATAR=0 in your .env file.
-** If this is set to 1, then it defaults to the old way using Gravatar.
-** The User table is updated to have an avatar field. This is different from the avatar field in the SocialProviders table (which is the actual url to the remote avatar).
-** Each time the User logs in with their social account, the avatar is updated.
+* * This is controlled by using USE_GRAVATAR=0 in your .env file.
+* * If this is set to 1, then it defaults to the old way using Gravatar.
+* * The User table is updated to have an avatar field. This is different from the avatar field in the SocialProviders table (which is the actual url to the remote avatar).
+* * Each time the User logs in with their social account, the avatar is updated.
 * Added support for Twitter and Google login/registration
 * Changed 'resource/views/Emails' to 'resource/views/emails'
 
