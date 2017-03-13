@@ -33,6 +33,10 @@ trait SyncsSocialUsers
 
         if ($this->accountSynced($socialUser)){
 
+            // update user account with latest avatar
+            
+            $this->updateUserWithAvatarFromSocialData($socialUser);
+
             throw new AlreadySyncedException;
 
         } else {
@@ -48,6 +52,11 @@ trait SyncsSocialUsers
             // if emails match, then sync accounts
 
             $this->syncUserAccountWithSocialData($socialUser);
+            
+            
+            // update user's avatar
+            
+            $this->updateUserWithAvatarFromSocialData($socialUser);
 
             alert()->success('Confirmed!', 'You are now synced...');
 
@@ -73,6 +82,43 @@ trait SyncsSocialUsers
             'source_id'  => $socialUser->id,
             'avatar'  => $socialUser->avatar
         ]);
+        
+    }
+    
+    private function updateUserWithAvatarFromSocialData($socialUser)
+    {
+        Log::info('updateUserWithAvatarFromSocialData called');
+        
+        if(! empty($socialUser->avatar)) {
+            
+            // save avatar to file so it can be easily used
+            
+            $avatar = file_get_contents($socialUser->avatar);
+            
+            // create a file name based on hash of email
+            
+            $filename = hash('adler32', Auth::user()->email);
+            
+            // create path for avatar file
 
+            $file = dirname(__file__).'/../../../../public/imgs/avatars/'.$filename.'.jpg';
+            
+            // save avatar to a file
+            
+            file_put_contents($file, $avatar);
+            
+            // create url for avatar
+            
+            $url = '/imgs/avatars/'.$filename.'.jpg';
+            
+            // update avatar url
+            
+            Auth::user()->avatar = $url;
+            
+            // save user data
+            
+            Auth::user()->save();
+            
+        }
     }
 }

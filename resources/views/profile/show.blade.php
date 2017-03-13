@@ -45,10 +45,15 @@
                             <!-- end user name -->
 
                             <!-- user gravatar-->
-
+                            @if( env('USE_GRAVATAR', 1) )
                             <img src="{{ Gravatar::get(Auth::user()->email)  }}"
                                  class="img-circle"
                                  alt="User Image">
+                            @else
+                            <img src="{{ Auth::user()->avatar }}" 
+                                 class="img-circle" 
+                                 alt="{{ Auth::user()->name }}">
+                            @endif
 
                             <!-- end user gravatar -->
 

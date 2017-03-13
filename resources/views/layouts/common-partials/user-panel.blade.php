@@ -3,15 +3,22 @@
     <!-- Menu Toggle Button -->
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
         <!-- The user image in the navbar-->
+        @if( env('USE_GRAVATAR', 1) )
         <img src="{{ Gravatar::get(Auth::user()->email)  }}" class="user-image" alt="User Image">
+        @else
+        <img src="{{ Auth::user()->avatar }}" class="user-image" alt="{{ Auth::user()->name }}">
+        @endif
         <!-- hidden-xs hides the username on small devices so only the image appears. -->
         <span class="hidden-xs">{{ Auth::user()->name }}</span>
     </a>
     <ul class="dropdown-menu">
         <!-- The user image in the menu -->
         <li class="user-header">
+            @if( env('USE_GRAVATAR', 1) )
             <img src="{{ Gravatar::get(Auth::user()->email)  }}" class="img-circle" alt="User Image">
-
+            @else
+            <img src="{{ Auth::user()->avatar }}" class="img-circle" alt="{{ Auth::user()->name }}">
+            @endif
             <p>
                 <span class="white-font-15"> <a href="/settings">{{ Auth::user()->name }}</a></span>
 

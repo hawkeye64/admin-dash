@@ -36,7 +36,7 @@ trait ManagesSocialAuth
             throw new EmailNotProvidedException;
 
         }
-
+        
         $this->setSocialUserName($socialUser);
 
         if ($this->socialUserAlreadyLoggedIn()) {
@@ -52,6 +52,8 @@ trait ManagesSocialAuth
         $this->loginAuthUser($authUser);
 
         $this->logoutIfUserNotActiveStatus();
+        
+        $this->updateUserWithAvatarFromSocialData($socialUser);
 
         return $this->redirectUser();
 
