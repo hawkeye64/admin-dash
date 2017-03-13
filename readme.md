@@ -1,3 +1,9 @@
+# Fork for Admin-Dash For Laravel 5.4
+
+## Changes
+
+!Added support for Twitter and Google login/registration
+
 # Admin-Dash For Laravel 5.4
 
 Admin-Dash is a start-up template implementing the [Admin LTE](https://almsaeedstudio.com/themes/AdminLTE/index2.html) admin panel into a Laravel 5.4 project.  The starter application is based on the sample application built in [Laravel 5.4 For Beginners](https://leanpub.com/laravel-5-4-for-beginners) by Bill Keck.
@@ -51,9 +57,17 @@ PUSHER_APP_ID=
 PUSHER_APP_KEY=
 PUSHER_APP_SECRET=
 
-FACEBOOK_ID=your-face-book-id
+FACEBOOK_ID=your-facebook-id
 FACEBOOK_SECRET=your-facebook-secret
 FACEBOOK_URL=http://your-domain.com/auth/facebook/callback
+
+TWITTER_ID=your-twitter-id
+TWITTER_SECRET=your-twitter-secret
+TWITTER_URL=http://your-domain.com/auth/twitter/callback
+
+GOOGLE_ID=your-google-id
+GOOGLE_SECRET=your-google-secret
+GOOGLE_URL=http://your-domain.com/auth/google/callback
 
 GITHUB_ID=your-github-id
 GITHUB_SECRET=your-github-secret
