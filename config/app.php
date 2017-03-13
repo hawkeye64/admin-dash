@@ -12,7 +12,6 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'Admin-test',
     'name' => env('APP_NAME', 'Admin-test'),
 
     /*
