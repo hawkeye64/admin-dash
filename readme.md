@@ -2,7 +2,8 @@
 
 ## Changes
 
-!Added support for Twitter and Google login/registration
+* Added support for Twitter and Google login/registration
+* Changed 'resource/views/Emails' to 'resource/views/emails'
 
 # Admin-Dash For Laravel 5.4
 
