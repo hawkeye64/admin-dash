@@ -33,6 +33,8 @@ trait SetsAuthUser
                 break;
 
             case 'facebook' :
+            case 'twitter' :
+            case 'google' :
 
                 $this->userName = $socialUser->name;
 

@@ -20,7 +20,7 @@ trait ManagesSocialAuth
 
     private $provider;
 
-    private $approvedProviders = [ 'facebook', 'github'];
+    private $approvedProviders = [ 'facebook', 'twitter', 'google', 'github'];
 
     public function handleProviderCallback($provider)
     {

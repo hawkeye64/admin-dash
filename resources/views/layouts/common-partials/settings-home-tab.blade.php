@@ -12,7 +12,15 @@
         <li><a href="/determine-profile-route"><i class="fa fa-user"></i> <span>Profile</span></a></li>
         <li><a href="/settings"><i class="fa fa-wrench"></i> <span>Settings</span></a></li>
         <li><a href="/auth/facebook"><i class="fa fa-facebook"></i> <span>Facebook Sync</span></a></li>
+        @if(! empty(env('TWITTER_URL')) )
+        <li><a href="/auth/twitter"><i class="fa fa-twitter"></i> <span>Twitter Sync</span></a></li>
+        @endif
+        @if(! empty(env('GOOGLE_URL')) )
+        <li><a href="/auth/google"><i class="fa fa-google"></i> <span>Google Sync</span></a></li>
+        @endif
+        @if(! empty(env('GITHUB_URL')) )
         <li><a href="/auth/github"><i class="fa fa-github"></i> <span>Github Sync</span></a></li>
+        @endif
         <li><form id="logout-form" action="/logout" method="POST" style="display: none;">
 
                 {{ csrf_field() }}
