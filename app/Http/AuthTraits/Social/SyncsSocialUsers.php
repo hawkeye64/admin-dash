@@ -87,8 +87,6 @@ trait SyncsSocialUsers
     
     private function updateUserWithAvatarFromSocialData($socialUser)
     {
-        Log::info('updateUserWithAvatarFromSocialData called');
-        
         if(! empty($socialUser->avatar)) {
             
             // save avatar to file so it can be easily used
