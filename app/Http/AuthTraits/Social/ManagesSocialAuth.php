@@ -36,7 +36,7 @@ trait ManagesSocialAuth
             throw new EmailNotProvidedException;
 
         }
-        
+
         $this->setSocialUserName($socialUser);
 
         if ($this->socialUserAlreadyLoggedIn()) {
@@ -48,6 +48,10 @@ trait ManagesSocialAuth
         // set authUser from socialUser
 
         $authUser = $this->setAuthUser($socialUser);
+        
+        // Social users don't need email confirmation
+        $authUser->confirmed = true;
+        $authUser->save();
 
         $this->loginAuthUser($authUser);
 

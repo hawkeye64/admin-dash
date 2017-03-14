@@ -70,6 +70,11 @@ Route::resource('profile', 'ProfileController');
 Route::get('register', 'Auth\AuthController@showRegistrationForm')->name('register');
 Route::post('register', 'Auth\AuthController@register');
 
+// Confirmation
+
+Route::get('confirmation/resend', 'Auth\ConfirmationController@resend');
+Route::get('confirmation/{id}/{token}', 'Auth\ConfirmationController@confirm');
+
 // Username route
 
 Route::get('/username', 'UsernameController@show')->middleware('auth');

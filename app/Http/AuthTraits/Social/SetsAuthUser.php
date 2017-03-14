@@ -48,7 +48,6 @@ trait SetsAuthUser
 
                 break;
 
-
         }
 
     }

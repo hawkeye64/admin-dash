@@ -49,6 +49,12 @@
 
                         <p class="login-box-msg">Register a new membership</p>
 
+                        @if (session('confirmation-success'))
+                            <div class="alert alert-success">
+                                {{ session('confirmation-success') }}
+                            </div>
+                        @endif
+
                         <div>
 
                             <!-- register form -->

@@ -52,6 +52,17 @@
 
                         <p class="login-box-msg">Sign in to start your session</p>
 
+                        @if (session('confirmation-success'))
+                            <div class="alert alert-success">
+                                {{ session('confirmation-success') }}
+                            </div>
+                        @endif
+                        @if (session('confirmation-danger'))
+                            <div class="alert alert-danger">
+                                {!! session('confirmation-danger') !!}
+                            </div>
+                        @endif                        
+
                         <!-- login form -->
 
                         @include('auth.login-form')
