@@ -1,9 +1,6 @@
 <?php
 
 return [
-    'email-title' => 'Email verification',
-    'email-intro'=> 'To validate your email click on the button below',
-    'email-button' => 'Email verification',
     'message' => 'Thanks for signing up! Please check your email.',
     'success' => 'You have successfully verified your account! You can now login.',
     'again' => 'You must verify your email before you can access the site. ' .
