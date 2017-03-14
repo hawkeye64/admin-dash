@@ -2,6 +2,7 @@
 
 ## Changes
 
+* Added support for APP_NAME in the .env file.
 * Added support for Email Confirmation on Registration
     * User is not logged in automatically after completing Registration.
     * User is not allowed to login until confirmation is completed.
@@ -42,6 +43,7 @@ APP_KEY=generate-your-app-key
 APP_DEBUG=true
 APP_LOG_LEVEL=debug
 APP_URL=http://localhost
+APP_NAME=your-app-name
 
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
