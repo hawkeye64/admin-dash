@@ -9,7 +9,7 @@ You have joined our site and now have access to the following benefits:
 * 24/7 support
 * updated daily content
 
-@component('mail::button', ['url' => 'http://www.admin-test.com'])
+@component('mail::button', ['url' => config('app.url')])
 Visit Now
 @endcomponent
 
@@ -18,9 +18,8 @@ Thanks,<br>
 
 @component('mail::panel', ['url' => ''])
 You are receiving this email because you subscribed to Sample Project.
-You may Unsubscribe by clicking <a href="/unsubscribe">here</a>.
+You may Unsubscribe by clicking <a href="{{ config('app.url') }}/unsubscribe">here</a>.
 @endcomponent
 
 @endcomponent
-
 
