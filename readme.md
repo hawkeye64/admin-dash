@@ -2,6 +2,12 @@
 
 ## Changes
 
+* Added support for Email Confirmation on Registration
+    * User is not logged in automatically after completing Registration.
+    * User is not allowed to login until confirmation is completed.
+    * If User attempts to login, they will get a notification with message containing link to resend confirmation.
+    * Confirmation is sent via a broadcast event.
+    * Email Confirmation is controlled via REQUIRE_EMAIL_CONFIRMATION=0|1 in the .env file.
 * Added support for Social avatars.
     * This is controlled by using USE_GRAVATAR=0 in your .env file.
     * If this is set to 1, then it defaults to the old way using Gravatar.
@@ -81,6 +87,7 @@ GITHUB_SECRET=your-github-secret
 GITHUB_URL=http://your-domain.com/auth/github/callback
 
 USE_GRAVATAR=0|1
+REQUIRE_EMAIL_CONFIRMATION=0|1
 
 
 ~~~~ 
@@ -95,7 +102,7 @@ php artisan key:generate
 
 The MAIL_DRIVER is set to log, setting up with mailtrap.io is recommended.
 
-You will also need to add your Github and Facebook .env parameters if you wish to use the social logins:
+You will also need to add your Facebook, Twitter, Google and/or GitHub info to the .env parameters if you wish to use the social logins:
 
 ~~~~
 
@@ -103,13 +110,21 @@ FACEBOOK_ID=
 FACEBOOK_SECRET=
 FACEBOOK_URL=
 
+TWITTER_ID=
+TWITTER_SECRET=
+TWITTER_URL=
+
+GOOGLE_ID=
+GOOGLE_SECRET=
+GOOGLE_URL=
+
 GITHUB_ID=
 GITHUB_SECRET=
 GITHUB_URL=
 
 ~~~~
 
-Obviously, you will have to create your Facebook and Github apps on your own to supply the credentials.  The starter app does support form-based login and registration, so you don’t need to have Facebook and Github setup for it to work.
+Obviously, you will have to create your Facebook, Twitter, Google and Github apps on your own to supply the credentials.  The starter app does support form-based login and registration, so you don’t need to have Social Logins setup for it to work.
 
 You should also add your DB info in your .env file:
 
